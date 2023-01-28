@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./Routes/Routes";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="max-w-screen-xl mx-auto">
+      <RouterProvider router={routes}></RouterProvider>
     </div>
   );
 };

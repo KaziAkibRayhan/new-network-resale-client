@@ -27,9 +27,9 @@ const WhySellLaptop = () => {
     },
   ];
   return (
-    <section className="mt-10 mb-14">
+    <section className="mt-8 mb-14">
       <div className="text-center p-5">
-        <h2 className="text-5xl font-bold mb-3">Why you choose Sell Your Laptop</h2>
+        <h2 className="text-4xl text-violet-500 font-bold mb-3">Why you choose Sell Your Laptop</h2>
         <p>
           We understand that you have a choice and we aren't the only company
           buying used laptops - so why choose us? Simple, we pay more than

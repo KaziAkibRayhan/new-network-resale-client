@@ -5,20 +5,16 @@ import slider3 from "../../../assets/Slider/slider-3.jpg";
 
 const Slider = () => {
   return (
-    <div className="carousel w-full my-7">
-      <div id="slide1" className="carousel-item bg-purple-400 relative w-full">
-        <div className="flex justify-center">
-          <div className="w-1/3 flex justify-center items-center">
-            <h3 className="text-3xl font-bold text-white italic">
-              Access to your own world. <br />
-              Innovations you create!
-            </h3>
-          </div>
-          <div className="w-2/3">
-            <img src={slider1} className="w-full" alt="slider-img-1" />
-          </div>
+    <div className="carousel w-full">
+      <div id="slide1" className="carousel-item relative w-full">
+        <div className="relative">
+          <img src={slider1} className="w-screen " alt="slider-img-1" />
+          <h3 className=" bg-blue-600/30 p-5 backdrop-brightness-75 text-xl md:text-4xl lg:text-5xl font-bold text-white italic  absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            Access to your own world. <br />
+            Innovations you create!
+          </h3>
         </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-[500px]">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a href="#slide3" className="btn btn-circle">
             ❮
           </a>
@@ -27,20 +23,16 @@ const Slider = () => {
           </a>
         </div>
       </div>
-      <div id="slide2" className="carousel-item bg-purple-400 relative w-full">
-        <div className="flex justify-center">
-          <div className="w-1/3 flex justify-center items-center">
-            <h3 className="text-3xl font-bold text-white italic">
-              Think another way.
-              <br />
-              Your personal assistant!
-            </h3>
-          </div>
-          <div className="w-2/3">
-            <img src={slider2} className="w-full" alt="slider-img-1" />
-          </div>
+      <div id="slide2" className="carousel-item relative w-full">
+        <div className="relative">
+          <img src={slider2} className="w-screen " alt="slider-img-1" />
+          <h3 className="  bg-blue-600/30 backdrop-brightness-75 p-5 text-xl md:text-4xl lg:text-5xl font-bold text-white italic  absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            Think another way.
+            <br /> 
+            Your personal assistant!
+          </h3>
         </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-[500px]">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a href="#slide1" className="btn btn-circle">
             ❮
           </a>
@@ -50,19 +42,15 @@ const Slider = () => {
         </div>
       </div>
 
-      <div id="slide3" className="carousel-item bg-purple-400 relative w-full">
-        <div className="flex justify-center">
-          <div className="w-1/3 flex justify-center items-center">
-            <h3 className="text-3xl font-bold text-white italic">
-              We do better. <br />
-              The quicker, the better!
-            </h3>
-          </div>
-          <div className="w-2/3">
-            <img src={slider3} className="w-full" alt="slider-img-1" />
-          </div>
+      <div id="slide3" className="carousel-item relative w-full">
+        <div className="relative">
+          <img src={slider3} className="w-screen" alt="slider-img-1" />
+          <h3 className=" bg-blue-600/30 backdrop-brightness-75 p-5 text-xl md:text-4xl lg:text-5xl font-bold text-white italic  absolute  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            We do better. <br />
+            The quicker, the better!
+          </h3>
         </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-[500px]">
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a href="#slide2" className="btn btn-circle">
             ❮
           </a>

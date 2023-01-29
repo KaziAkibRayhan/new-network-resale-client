@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FaLaptopCode } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -7,17 +9,12 @@ const Footer = () => {
         <div className="lg:flex">
           <div className="w-full -mx-6 lg:w-2/5">
             <div className="px-6">
-              <a href="/" >
-                <img
-                  className="w-auto h-7"
-                  src="https://merakiui.com/images/full-logo.svg"
-                  alt=""
-                />
-              </a>
-
+              <Link className="dark:text-white text-xl" to={"/"}>
+                <FaLaptopCode className="inline h-8 w-8" /> New Network Resale
+              </Link>
               <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
-                Join 31,000+ other and never miss out on new tips, tutorials,
-                and more.
+                The best you can get. Always fashionable. Laptop assist humans
+                in assisting others.
               </p>
 
               <div className="flex mt-6 -mx-2">
@@ -68,11 +65,13 @@ const Footer = () => {
               </div>
             </div>
           </div>
-className
+          className
           <div className="mt-6 lg:mt-0 lg:flex-1">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               <div>
-                <h3 className="text-gray-700 uppercase dark:text-white">About</h3>
+                <h3 className="text-gray-700 uppercase dark:text-white">
+                  About
+                </h3>
                 <a
                   href="/"
                   className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
@@ -94,7 +93,9 @@ className
               </div>
 
               <div>
-                <h3 className="text-gray-700 uppercase dark:text-white">Blog</h3>
+                <h3 className="text-gray-700 uppercase dark:text-white">
+                  Blog
+                </h3>
                 <a
                   href="/"
                   className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
@@ -140,7 +141,9 @@ className
               </div>
 
               <div>
-                <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
+                <h3 className="text-gray-700 uppercase dark:text-white">
+                  Contact
+                </h3>
                 <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
                   +1 526 654 8965
                 </span>

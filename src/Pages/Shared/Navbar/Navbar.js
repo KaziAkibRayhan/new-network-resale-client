@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaLaptopCode } from "react-icons/fa";
 
 const Navbar = () => {
-    const menuItems = <>
-    <li><Link to={'/'}>Home</Link></li>
-    <li><Link to={'/'}>Home</Link></li>
+  const menuItems = (
+    <>
+      <li>
+        <Link to={"/"}>Home</Link>
+      </li>
+      <li>
+        <Link to={"/"}>Home</Link>
+      </li>
     </>
+  );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-200">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -33,12 +40,12 @@ const Navbar = () => {
             {menuItems}
           </ul>
         </div>
-        <Link to={'/'} className="btn btn-ghost normal-case text-xl">New Network Resale</Link>
+        <Link to={"/"} className="btn btn-ghost normal-case text-xl">
+          <FaLaptopCode className="inline h-8 w-8" /> <span className="ml-1">New Network Resale</span>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-        {menuItems}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{menuItems}</ul>
       </div>
     </div>
   );

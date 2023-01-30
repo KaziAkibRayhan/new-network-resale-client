@@ -4,15 +4,20 @@ import { Link } from "react-router-dom";
 const ProductCategoryCard = ({ productCategory }) => {
   const { brand, image, _id } = productCategory;
   return (
-    <div className="card w-96 bg-base-100 shadow-2xl my-8">
-      <Link to={`/category/${_id}`}>
-        <div className="card-body">
-          <h2 className="card-title">{brand}</h2>
+    <div className="card card-compact w-96 bg-base-100 shadow-xl">
+      <figure>
+        <img src={image} alt="images" />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{brand}</h2>
+        <div className="card-actions justify-end">
+          <Link to={`/category/${_id}`}>
+            <button className="btn btn-primary">
+              See All {brand} Products
+            </button>
+          </Link>
         </div>
-        <figure>
-          <img src={image} alt="Shoes" />
-        </figure>
-      </Link>
+      </div>
     </div>
   );
 };

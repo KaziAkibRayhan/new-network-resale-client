@@ -13,7 +13,7 @@ const Products = () => {
         <ProductCard product={product} key={product._id} setBookingProduct={setBookingProduct} />
       ))}
       { bookingProduct &&
-        <BookingModal bookingProduct={bookingProduct}></BookingModal>
+        <BookingModal bookingProduct={bookingProduct} setBookingProduct={setBookingProduct}></BookingModal>
       }
     </div>
   );

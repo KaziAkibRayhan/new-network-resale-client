@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const SignUp = () => {
+  const { createUser, updateUser } = useContext(AuthContext);
   const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
     console.log(name, email, password);
+
+    createUser(email, password)
+      .then((result) => {
+        updateUser(name)
+          .then(() => {
+            toast.success('Sign up successfully!')
+            event.target.reset()
+          })
+          .catch((error) => toast.error(error.message));
+      })
+      .catch((error) => toast.error(error.message));
   };
   return (
     <div className="hero my-10">
@@ -59,7 +73,7 @@ const SignUp = () => {
           </form>
           <p className="text-center">
             Already have an account?{" "}
-            <Link className="btn btn-primary" to={"/login"}>
+            <Link className="btn btn-primary btn-sm" to={"/login"}>
               Login
             </Link>
           </p>

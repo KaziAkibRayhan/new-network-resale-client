@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home/Home";
 import Products from "../Pages/Home/Products/Products";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 export const routes = createBrowserRouter([
   {
@@ -24,8 +25,13 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/category/:id",
-        element: <Products />,
-        loader: async({params}) => fetch(`http://localhost:5000/category/${params.id}`)
+        element: (
+          <PrivateRoutes>
+            <Products />
+          </PrivateRoutes>
+        ),
+        loader: async ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.id}`),
       },
     ],
   },

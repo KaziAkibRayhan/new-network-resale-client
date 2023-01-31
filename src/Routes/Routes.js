@@ -8,6 +8,7 @@ import Products from "../Pages/Home/Products/Products";
 import Login from "../Pages/Login/Login";
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 import SignUp from "../Pages/SignUp/SignUp";
+import AdminRoute from "./AdminRoute/AdminRoute";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 export const routes = createBrowserRouter([
@@ -51,6 +52,15 @@ export const routes = createBrowserRouter([
         <DashboardLayout />
       </PrivateRoutes>
     ),
-    children: [{ path: "/dashboard/all-sellers", element: <AllSellers /> }],
+    children: [
+      {
+        path: "/dashboard/all-sellers",
+        element: (
+          <AdminRoute>
+            <AllSellers />
+          </AdminRoute>
+        ),
+      },
+    ],
   },
 ]);

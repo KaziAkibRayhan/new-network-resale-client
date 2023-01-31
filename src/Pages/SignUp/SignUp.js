@@ -12,22 +12,23 @@ const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
+    const type = event.target.type.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
 
     createUser(email, password)
-      .then((result) => {
+      .then(() => {
         updateUser(name)
           .then(() => {
-            storeUser(name, email);
+            storeUser(name, email, type);
           })
           .catch((error) => toast.error(error.message));
       })
       .catch((error) => toast.error(error.message));
   };
 
-  const storeUser = (name, email) => {
-    const user = { name, email };
+  const storeUser = (name, email, type) => {
+    const user = { name, email, type };
     fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
@@ -63,6 +64,15 @@ const SignUp = () => {
                 placeholder="name"
                 className="input input-bordered"
               />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">User Type</span>
+              </label>
+              <select name='type' className="select select-primary w-full max-w-xs">
+                <option selected>Seller</option>
+                <option>Buyer</option>
+              </select>
             </div>
             <div className="form-control">
               <label className="label">

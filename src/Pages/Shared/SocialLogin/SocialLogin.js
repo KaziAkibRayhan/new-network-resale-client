@@ -13,12 +13,13 @@ const SocialLogin = () => {
   const provider = new GoogleAuthProvider();
   const handleGoogleLogin = () => {
     signInGoogle(provider)
-      .then((result) => {
+      .then(() => {
         toast.success("Successfully google social login!");
         navigate(from, { replace: true });
       })
       .catch((error) => toast.error(error.message));
   };
+
   return (
     <div>
       <div className="text-center">

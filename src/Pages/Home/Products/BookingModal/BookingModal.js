@@ -22,7 +22,6 @@ const BookingModal = ({ bookingProduct, setBookingProduct }) => {
       phoneNumber,
       location,
     };
-    console.log(booking);
 
     fetch("http://localhost:5000/bookings", {
       method: "POST",

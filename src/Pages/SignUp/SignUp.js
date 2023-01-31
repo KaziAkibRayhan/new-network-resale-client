@@ -1,29 +1,49 @@
 import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const { createUser, updateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(name, email, password);
 
     createUser(email, password)
       .then((result) => {
         updateUser(name)
           .then(() => {
-            toast.success('Sign up successfully!')
-            event.target.reset()
+            storeUser(name, email);
           })
           .catch((error) => toast.error(error.message));
       })
       .catch((error) => toast.error(error.message));
   };
+
+  const storeUser = (name, email) => {
+    const user = { name, email };
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Sign up successfully!");
+          navigate(from, { replace: true });
+        }
+      });
+  };
+
   return (
     <div className="hero my-10">
       <div className="hero-content flex-col lg:flex">
@@ -79,7 +99,7 @@ const SignUp = () => {
             </Link>
           </p>
           <div className="divider">OR</div>
-          <SocialLogin/>
+          <SocialLogin />
         </div>
       </div>
     </div>

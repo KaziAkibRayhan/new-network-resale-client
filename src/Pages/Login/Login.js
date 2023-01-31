@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
@@ -15,6 +18,7 @@ const Login = () => {
       .then((result) => {
         toast.success("Login Successfully!");
         event.target.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => toast.error(error.message));
   };

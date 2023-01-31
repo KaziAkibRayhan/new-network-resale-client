@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const { createUser, updateUser } = useContext(AuthContext);
@@ -78,9 +79,7 @@ const SignUp = () => {
             </Link>
           </p>
           <div className="divider">OR</div>
-          <div className="text-center">
-            <button className="btn btn-primary mb-4">Login With Google</button>
-          </div>
+          <SocialLogin/>
         </div>
       </div>
     </div>

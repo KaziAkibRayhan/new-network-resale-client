@@ -13,9 +13,26 @@ const SocialLogin = () => {
   const provider = new GoogleAuthProvider();
   const handleGoogleLogin = () => {
     signInGoogle(provider)
-      .then(() => {
-        toast.success("Successfully google social login!");
-        navigate(from, { replace: true });
+      .then((result) => {
+        const email = result?.user?.email;
+        const buyers = {
+          email,
+          buyer: true,
+        };
+        fetch(`http://localhost:5000/users`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(buyers),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              toast.success("Successfully google social login!");
+              navigate(from, { replace: true });
+            }
+          });
       })
       .catch((error) => toast.error(error.message));
   };

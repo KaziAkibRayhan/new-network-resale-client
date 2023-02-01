@@ -35,7 +35,6 @@ const AddAProduct = () => {
       categoryProduct,
       description,
     };
-    console.log(product);
     fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {

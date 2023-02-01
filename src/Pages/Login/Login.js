@@ -13,7 +13,6 @@ const Login = () => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email, password);
     signIn(email, password)
       .then((result) => {
         toast.success("Login Successfully!");

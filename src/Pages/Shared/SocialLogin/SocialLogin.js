@@ -8,6 +8,7 @@ const SocialLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const type = 'buyer'
 
   const { signInGoogle } = useContext(AuthContext);
   const provider = new GoogleAuthProvider();
@@ -15,9 +16,11 @@ const SocialLogin = () => {
     signInGoogle(provider)
       .then((result) => {
         const email = result?.user?.email;
+        const name = result?.user?.displayName;
         const buyers = {
           email,
-          buyer: true,
+          name,
+          type,
         };
         fetch(`http://localhost:5000/users`, {
           method: "POST",

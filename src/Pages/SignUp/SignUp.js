@@ -69,9 +69,12 @@ const SignUp = () => {
               <label className="label">
                 <span className="label-text">User Type</span>
               </label>
-              <select name='type' className="select select-primary w-full max-w-xs">
-                <option selected>Seller</option>
-                <option>Buyer</option>
+              <select
+                name="type"
+                className="select select-primary w-full max-w-xs"
+              >
+                <option>Seller</option>
+                <option>buyer</option>
               </select>
             </div>
             <div className="form-control">

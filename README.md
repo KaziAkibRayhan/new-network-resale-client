@@ -1,13 +1,10 @@
 # Site Name: New Network Resale
 # Live website link :  https://new-network-resale.web.app/
-# Client Side  GitHub Code : 
-# Server Side Github Code : 
+# Client Side  GitHub Code : https://github.com/KaziAkibRayhan/new-network-resale-client
+# Server Side Github Code : https://github.com/KaziAkibRayhan/new-network-resale-server
 
-https://new-network-resale-server.vercel.app/
-
-# adminEmail: 
-
-# adminPassword: 
+# adminEmail: mahin@gmail.com
+# adminPassword: 123456
 
 
 

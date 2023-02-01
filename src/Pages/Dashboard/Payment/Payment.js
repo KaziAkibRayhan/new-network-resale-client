@@ -11,7 +11,7 @@ const Payment = () => {
   const { data: order, isLoading } = useQuery({
     queryKey: ["bookings"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/bookings/${id}`);
+      const res = await fetch(`https://new-network-resale-server.vercel.app/bookings/${id}`);
       const data = await res.json();
       return data;
     },

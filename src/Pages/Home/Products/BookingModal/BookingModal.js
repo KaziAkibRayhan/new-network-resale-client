@@ -24,7 +24,7 @@ const BookingModal = ({ bookingProduct, setBookingProduct }) => {
       image
     };
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://new-network-resale-server.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

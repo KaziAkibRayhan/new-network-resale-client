@@ -48,7 +48,7 @@ export const routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: async ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://new-network-resale-server.vercel.app/category/${params.id}`),
       },
     ],
   },

@@ -13,7 +13,7 @@ const MyProducts = () => {
   } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/products/${user?.email}`);
+      const res = await fetch(`https://new-network-resale-server.vercel.app/products/${user?.email}`);
       const data = await res.json();
       return data;
     },
@@ -27,7 +27,7 @@ const MyProducts = () => {
       "Are you sure delete!, After delete it cannot be undone!"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/products/${id}`, {
+      fetch(`https://new-network-resale-server.vercel.app/products/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

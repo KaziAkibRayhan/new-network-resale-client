@@ -22,7 +22,7 @@ const SocialLogin = () => {
           name,
           type,
         };
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://new-network-resale-server.vercel.app/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

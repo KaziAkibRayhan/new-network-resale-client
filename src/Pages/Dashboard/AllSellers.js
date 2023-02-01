@@ -7,7 +7,7 @@ const AllSellers = () => {
   const [refresh, setRefresh] = useState(false)
   const Seller = "Seller";
   axios
-    .get(`http://localhost:5000/users/${Seller}`)
+    .get(`https://new-network-resale-server.vercel.app/users/${Seller}`)
     .then(function (data) {
       setSellers(data.data);
       setRefresh(refresh)
@@ -21,7 +21,7 @@ const AllSellers = () => {
       "Are you sure delete!, After delete it cannot be undone!"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/users/${id}`, {
+      fetch(`https://new-network-resale-server.vercel.app/users/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
